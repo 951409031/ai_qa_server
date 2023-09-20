@@ -1,0 +1,10 @@
+version: '3'
+services:
+  ai_qa_server:
+    build: .
+    volumes:
+      - ./src/:/src/
+    ports:
+      - 8000:8000
+    restart: always
+    entrypoint: uwsgi --ini uwsgi.ini
